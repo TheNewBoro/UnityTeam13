@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform muzzlePoint;
+    [SerializeField] ObjectPool bulletPool;
+
+    
+    
+
+    [Range(10, 30)]
+    [SerializeField] float bulletSpeed;
+
+    public void Fire()
     {
+        PooledObject instance = bulletPool.GetPool(muzzlePoint.position, muzzlePoint.rotation);
+
+        Rigidbody bulletRigidBody = instance.GetComponent<Rigidbody>();
+        bulletRigidBody.velocity = muzzlePoint.forward * bulletSpeed;
+
         
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   //public void ShowEffect()
+   //{
+   //    PooledObject instance = 
+   //    // bullet이 ReturnPool할때
+   //
+   //    // ShellExplosion 프리팹을 bullet의 위치에 구현하고 즉시 사라지게한다
+   //}
 }

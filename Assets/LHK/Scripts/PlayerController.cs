@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
 
     //플레이어 체력
     [SerializeField] private float playerHP;
-    //적 또는 적의 발사체와 충돌하면 hp-1
+
+    //플레이어 이동속도
+    [SerializeField] private float playerMoveSpeed;
     
     
 
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    //적 또는 적의 발사체와 충돌하면 hp-1
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Bullet"))

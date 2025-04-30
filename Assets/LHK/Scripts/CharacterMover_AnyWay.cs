@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class CharacterMover_AnyWay : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+
     [SerializeField] private float rotateInterpolate;
+    [SerializeField] private float runSpeed = 1.5f;
+    [SerializeField] private float walkSpeed = 1;
+
+    //플레이어 이동속도
+    private float moveSpeed;
 
 
     private void FixedUpdate()
@@ -19,6 +24,18 @@ public class CharacterMover_AnyWay : MonoBehaviour
         {
             return;
         }
+
+        //shift키를 누르는 동안 달리기
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = runSpeed;
+        }
+        else
+        {
+            moveSpeed = walkSpeed;
+        }
+
+
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), rotateInterpolate * Time.deltaTime);
         transform.position += moveSpeed * Time.deltaTime * direction;
     }

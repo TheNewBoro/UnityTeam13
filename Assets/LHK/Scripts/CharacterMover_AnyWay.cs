@@ -6,7 +6,7 @@ public class CharacterMover_AnyWay : MonoBehaviour
 {
 
     [SerializeField] private float rotateInterpolate;
-    [SerializeField] private float runSpeed = 2;
+    [SerializeField] private float runSpeed = 1.5f;
     [SerializeField] private float walkSpeed = 1;
 
     //플레이어 이동속도

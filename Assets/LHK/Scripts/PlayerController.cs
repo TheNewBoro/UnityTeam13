@@ -31,13 +31,13 @@ public class PlayerController : MonoBehaviour
         if(other.CompareTag("Bullet"))
         {
             playerHP--;
-            Debug.Log("플레이어 체력 -1");
+            Debug.Log("bullet에 충돌되어 플레이어 체력 -1");
         }
 
         else if(other.CompareTag("Monster"))
         {
             playerHP--;
-            Debug.Log("플레이어 체력 -1");
+            Debug.Log("몬스터와 충돌하여 플레이어 체력 -1");
         }
     }
 

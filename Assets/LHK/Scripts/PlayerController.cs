@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Shooter shooter;
+    private Coroutine fireCoroutine;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            shooter.Fire();
+    private void FixedUpdate()
+    { 
+        if(fireCoroutine == null) 
+        { 
+        fireCoroutine = StartCoroutine(shooter.Fire());
         }
+
     }
 }

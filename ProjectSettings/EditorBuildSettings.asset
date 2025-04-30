@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Kwon_YH/Scenes/Ice Scenes.unity
+    guid: 21704024acb56a94bb9e89cfba40f160
+  - enabled: 1
+    path: Assets/Kwon_YH/Scenes/Desert Scenes.unity
+    guid: e6546b49eb504e84d86ed1f3029b299f
+  - enabled: 1
+    path: Assets/Kwon_YH/Scenes/Lava Scenes.unity
+    guid: 207b682b6c3694642a8edf01a0f0c329
   m_configObjects: {}

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Coroutine fireCoroutine;
 
     //플레이어 체력
-    [SerializeField] private float playerHP;
+    [SerializeField] private float playerHP=1;
 
     public int playerLevel = 1;
     public int experience = 0;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
         if (playerHP <=0)
         {
-            Debug.Log("플레이어 사망");
+            Debug.Log("<color=#ff0000ff>플레이어 사망</color>");
             //TODO 게임오버
         }
 
@@ -49,16 +49,16 @@ public class PlayerController : MonoBehaviour
     //적 또는 적의 발사체와 충돌하면 hp-1
     private void OnTriggerEnter(Collider other)
     {
-        //if(other.CompareTag("Bullet"))
-        //{
-        //    playerHP--;
-        //    Debug.Log("bullet에 충돌되어 플레이어 체력 -1");
-        //}
+        if(other.CompareTag("Bullet"))
+        {
+            playerHP--;
+            Debug.Log("bullet에 충돌되어 플레이어 체력 -1");
+        }
 
         if(other.CompareTag("Monster"))
         {
             playerHP--;
-            Debug.Log("몬스터와 충돌하여 플레이어 체력 -1");
+            Debug.Log("<color=#ff0000ff>몬스터와 충돌하여 플레이어 체력 -1</color>");
         }
     }
 
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
         experienceToLevelUp += 5;
 
-        Debug.Log($"!!!!레벨 {playerLevel} 달성!!!!, 현재 경험치: {experience}, 다음 레벨까지: {experienceToLevelUp}");
+        Debug.Log($"<b>!!!!레벨 {playerLevel} 달성!!!!</b>, 현재 경험치: {experience}, 다음 레벨까지: {experienceToLevelUp}");
 
 
 

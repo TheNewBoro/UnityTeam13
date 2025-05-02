@@ -30,6 +30,5 @@ public class TestMonsterController : MonoBehaviour
             Debug.Log("몬스터 사망으로 삭제");
             Destroy(gameObject);
         }
-
     }
 }

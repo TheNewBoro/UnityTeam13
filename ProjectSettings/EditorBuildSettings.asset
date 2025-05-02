@@ -14,10 +14,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Kwon_YH/Scenes/Lava Scenes.unity
     guid: 207b682b6c3694642a8edf01a0f0c329
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KYG.unity
-    guid: e798226602e234348bff283d0296bbb5
-  - enabled: 1
+    guid: 5d238e7fe31242942b8965e696cd404c
+  - enabled: 0
     path: Assets/Scenes/ProtoType.unity
     guid: 2b6fcebd47e2b054f93f7837fb235d19
+  - enabled: 0
+    path: Assets/KYG/Title.unity
+    guid: 826e34839e8b88347a38dfc0c89d7dde
+  - enabled: 1
+    path: Assets/KYG/pause Scene.unity
+    guid: c08145668c9f9f34ea1ea59a47a94450
   m_configObjects: {}

@@ -96,8 +96,8 @@ GameObject:
   - component: {fileID: 5546546203923520058}
   - component: {fileID: 8446725993736895878}
   m_Layer: 0
-  m_Name: crop_carrot_single
-  m_TagString: Player
+  m_Name: carrot
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &8446725993736895878
 BoxCollider:

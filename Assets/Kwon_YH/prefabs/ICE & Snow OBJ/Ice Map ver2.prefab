@@ -1,0 +1,285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1633077876992690803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6000120682390860282}
+  m_Layer: 0
+  m_Name: Ice Map ver2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6000120682390860282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633077876992690803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.31, y: 5.5208983, z: 7.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5866613526699074276}
+  - {fileID: 8858181428161711769}
+  - {fileID: 5156571180895741995}
+  - {fileID: 6252356282407528377}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &596894130954359883
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6000120682390860282}
+    m_Modifications:
+    - target: {fileID: 712205370693105662, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_Name
+      value: Ice Tile ver2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52089834
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+--- !u!4 &6252356282407528377 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+  m_PrefabInstance: {fileID: 596894130954359883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1145648296920846614
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6000120682390860282}
+    m_Modifications:
+    - target: {fileID: 712205370693105662, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_Name
+      value: Ice Tile ver2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52089834
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+--- !u!4 &5866613526699074276 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+  m_PrefabInstance: {fileID: 1145648296920846614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1802458884457585625
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6000120682390860282}
+    m_Modifications:
+    - target: {fileID: 712205370693105662, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_Name
+      value: Ice Tile ver2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52089834
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+--- !u!4 &5156571180895741995 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+  m_PrefabInstance: {fileID: 1802458884457585625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2621897586479693163
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6000120682390860282}
+    m_Modifications:
+    - target: {fileID: 712205370693105662, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_Name
+      value: Ice Tile ver2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52089834
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+--- !u!4 &8858181428161711769 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6812904883308065778, guid: d0f5d932ea838544fa4e08b8a07d7226, type: 3}
+  m_PrefabInstance: {fileID: 2621897586479693163}
+  m_PrefabAsset: {fileID: 0}

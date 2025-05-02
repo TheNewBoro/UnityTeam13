@@ -9,12 +9,16 @@ public class Shooter : MonoBehaviour
     [SerializeField] ObjectPool bulletPool;
     [SerializeField] float attackSpeed;
 
-    
-    
-    
+
+
+
 
     [Range(10, 30)]
     [SerializeField] float bulletSpeed;
+
+    private bool canPenetrate = false;
+
+    
 
     public IEnumerator Fire()
     {
@@ -23,18 +27,37 @@ public class Shooter : MonoBehaviour
             yield return new WaitForSeconds(attackSpeed);
             PooledObject instance = bulletPool.GetPool(muzzlePoint.position, muzzlePoint.rotation);
 
+            
             Rigidbody bulletRigidBody = instance.GetComponent<Rigidbody>();
             bulletRigidBody.velocity = muzzlePoint.forward * bulletSpeed;
+            
+
+
+            //관통탄 설정
+            Bullet bullet = instance.GetComponent<Bullet>();
+            bullet.isPenetrating = canPenetrate;
+
+
+
+            //if(PlayerController.Instance.playerLevel >= 2) //플레이어 레벨이 2 이상일때
+            //{
+            //    bullet.isPiercing = true;
+            //}
+            //else 
+            //{
+            //    bullet.isPiercing = false;
+            //}
+
 
         }
-
     }
 
-   //public void ShowEffect()
-   //{
-   //    PooledObject instance = 
-   //    // bullet이 ReturnPool할때
-   //
-   //    // ShellExplosion 프리팹을 bullet의 위치에 구현하고 즉시 사라지게한다
-   //}
+    public void EnablePenetration(bool isEnabled)
+    {
+        canPenetrate = isEnabled;
+    }
+
+   
+
+   
 }

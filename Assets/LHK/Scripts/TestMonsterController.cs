@@ -5,10 +5,15 @@ using UnityEngine;
 public class TestMonsterController : MonoBehaviour
 {
     [SerializeField] private float meeleeMonsterHP = 1;
+    private bool isDead = false;
 
     private void Update()
     {
+        if(!isDead)
+        {
         MonsterDie();
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,8 +32,19 @@ public class TestMonsterController : MonoBehaviour
     {
         if (meeleeMonsterHP <= 0)
         {
-            Debug.Log("몬스터 사망으로 삭제");
+            isDead = true;
+            
+            GameManager.Instance.AddScore(1);
+            Debug.Log("몬스터를 처치하여 <color=#0000ffff>스코어 1점 추가</color>");
+
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player!=null)
+            {
+                player.GetComponent<PlayerController>().GainExperience(5);
+            }
+
             Destroy(gameObject);
+            Debug.Log("몬스터 사망으로 삭제");
         }
     }
 }

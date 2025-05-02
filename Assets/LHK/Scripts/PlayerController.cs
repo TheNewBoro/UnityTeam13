@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,31 +11,51 @@ public class PlayerController : MonoBehaviour
     //플레이어 체력
     [SerializeField] private float playerHP;
 
-    //플레이어 이동속도
-    [SerializeField] private float playerMoveSpeed;
-    
-    
+    public int playerLevel = 1;
+    public int experience = 0;
+    public int experienceToLevelUp =6 ;
 
-    private void FixedUpdate()
+    private static PlayerController instance;
+    public static PlayerController Instance { get { return instance; } }
+
+
+
+    private void Update()
     { 
         if(fireCoroutine == null) 
         { 
         fireCoroutine = StartCoroutine(shooter.Fire());
         }
 
+        if (playerHP <=0)
+        {
+            Debug.Log("플레이어 사망");
+            //TODO 게임오버
+        }
+
+        if(playerLevel >= 2)
+        {
+            shooter.EnablePenetration(true);
+        }
+        else
+        {
+            shooter.EnablePenetration(false);
+        }
     }
+
+    
 
 
     //적 또는 적의 발사체와 충돌하면 hp-1
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Bullet"))
-        {
-            playerHP--;
-            Debug.Log("bullet에 충돌되어 플레이어 체력 -1");
-        }
+        //if(other.CompareTag("Bullet"))
+        //{
+        //    playerHP--;
+        //    Debug.Log("bullet에 충돌되어 플레이어 체력 -1");
+        //}
 
-        else if(other.CompareTag("Monster"))
+        if(other.CompareTag("Monster"))
         {
             playerHP--;
             Debug.Log("몬스터와 충돌하여 플레이어 체력 -1");
@@ -42,4 +63,29 @@ public class PlayerController : MonoBehaviour
     }
 
     
+
+    public void GainExperience(int amount)
+    {
+        experience += amount;
+        Debug.Log($"경험치 획득: +{amount} 현재 경험치: {experience}/{experienceToLevelUp}");
+
+        while (experience >= experienceToLevelUp)
+        {
+            LevelUp();
+        }
+    }
+
+    private void LevelUp()
+    {
+        experience -= experienceToLevelUp;
+        playerLevel++;
+
+        experienceToLevelUp += 5;
+
+        Debug.Log($"!!!!레벨 {playerLevel} 달성!!!!, 현재 경험치: {experience}, 다음 레벨까지: {experienceToLevelUp}");
+
+
+
+    }
+
 }

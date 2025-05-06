@@ -8,7 +8,7 @@ public class SceneChange : MonoBehaviour
 
     public void GameScenesCtrl()
     {
-        SceneManager.LoadScene("ProtoType"); // 어떤 씬 으로 이동할건지
+        LodingScene.LoadScene("pause Scene"); // SceneManager.LoadScene("pause Scene"); // 어떤 씬 으로 이동할건지
     }
 
 }

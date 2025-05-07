@@ -10,6 +10,7 @@ public class ItemTest : MonoBehaviour
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {
+            Debug.Log("!!!æ∆¿Ã≈€ »πµÊ!!!");
             player.Grow();
             Destroy(gameObject); // æ∆¿Ã≈€ ªÁ∂Û¡¸
         }

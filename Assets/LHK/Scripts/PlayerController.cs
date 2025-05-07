@@ -9,43 +9,47 @@ public class PlayerController : MonoBehaviour
     private Coroutine fireCoroutine;
 
     //플레이어 체력
-    
+
 
     public int playerLevel = 1;
     public int experience = 0;
-    public int experienceToLevelUp =6 ;
+    public int experienceToLevelUp = 6;
 
     private static PlayerController instance;
     public static PlayerController Instance { get { return instance; } }
 
-    public int playerHP = 1; // 기본 체력
-    public int currentHP; // 현재 체력
+    
+    public int currentHP = 1; // 현재 체력
     public float playerSize = 1f; // 크기 배율
     public float sizeIncrement = 1f; // 크기 증가량
     public float sizeDecrement = 1f; // 크기 감소량
     public float maxPlayerHP = 2f; // 최대 체력 제한
     public float maxPlayerSize = 2f;
     private bool canGrow = true; // 크기 증가 가능 여부
+
+    public float damageCoolDown = 1.0f;
+    private float lastHitTime = -999f;
+
     void Start()
     {
-        currentHP = playerHP;
+        
         UpdateSize();
     }
 
     private void Update()
-    { 
-        if(fireCoroutine == null) 
-        { 
-        fireCoroutine = StartCoroutine(shooter.Fire());
+    {
+        if (fireCoroutine == null)
+        {
+            fireCoroutine = StartCoroutine(shooter.Fire());
         }
 
-        if (playerHP <=0)
+        if (currentHP <= 0)
         {
             Debug.Log("<color=#ff0000ff>플레이어 사망</color>");
             //TODO 게임오버
         }
 
-        if(playerLevel >= 2)
+        if (playerLevel >= 2)
         {
             shooter.EnablePenetration(true);
         }
@@ -55,22 +59,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
 
 
     //적 또는 적의 발사체와 충돌하면 hp-1
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        
 
-        if (other.CompareTag("Monster"))
+
+        if (other.gameObject.CompareTag("Monster"))
         {
-            playerHP--;
-            Debug.Log("<color=#ff0000ff>몬스터와 충돌하여 플레이어 체력 -1</color>");
+            if (Time.time - lastHitTime >= damageCoolDown)
+            {
+                currentHP--;
+                lastHitTime = Time.time;
+                Debug.Log("<color=#ff0000ff>몬스터와 충돌하여 플레이어 체력 -1</color>");
+
+            }
         }
     }
 
-    
+
 
     public void GainExperience(int amount)
     {
@@ -106,6 +115,8 @@ public class PlayerController : MonoBehaviour
             {
                 playerSize = maxPlayerSize; // 최대 크기 제한
             }
+
+            Debug.Log("@@플레이어 실드 @@ +1 @@ 부여@@");
             currentHP += 1;
             UpdateSize();
 
@@ -124,7 +135,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void TakeDamage()
+    public void TakeDamage(int amount)
     {
         currentHP -= 1;
         if (currentHP <= 0)

@@ -41,14 +41,14 @@ public class LodingScene : MonoBehaviour
         AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
         op.allowSceneActivation = false;
 
-        float timer = 0f;
+        float timer = 0f; // 반복문
         while (!op.isDone)
         {
             yield return null;
 
             if (op.progress < 0.9f)
             {
-                progressBar.fillAmount = op.progress;
+                progressBar.fillAmount = op.progress; // 로딩 진행도 표시
             }
             else
             {
@@ -57,7 +57,7 @@ public class LodingScene : MonoBehaviour
 
                 if (progressBar.fillAmount >= 1f)
                 {
-                    loadingText.text = "Loading complete!";
+                    loadingText.text = "그래도 재밌게 즐겨주세요!";
                     continueText.gameObject.SetActive(true);
                     break;
                 }

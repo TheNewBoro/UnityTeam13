@@ -97,9 +97,10 @@ GameObject:
   - component: {fileID: 4411630512989397835}
   - component: {fileID: -7616057023283445206}
   - component: {fileID: -4061611550138141846}
+  - component: {fileID: 1722660245512357599}
   m_Layer: 0
   m_Name: axe_metal
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,9 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10a414d6f236fb4c89397ba69b0eb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropRate: 1
+  dropRate: 0.5
   itemPrefab: {fileID: 3379992438457931361, guid: 240f3838bd2d3404a8018e204fa0ac3b, type: 3}
-  meeleeMonsterHP: 1
+  MonsterHP: 1
 --- !u!114 &4411630512989397835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e5845d3940763478f00dc5b3b3285a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meeleeMonsterHP: 1
+  meleeMonsterHP: 1
 --- !u!54 &-7616057023283445206
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -203,7 +204,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &-4061611550138141846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -225,6 +226,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1722660245512357599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266292184255956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59592e6e52d54504d8e0c1f68aa02b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1684038762557050
 GameObject:
   m_ObjectHideFlags: 0

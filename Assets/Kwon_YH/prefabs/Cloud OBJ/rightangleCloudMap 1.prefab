@@ -280,6 +280,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 6806253771252001172, guid: 360ea4246cb49cb419ad928437fd8ba6, type: 3}
+      propertyPath: m_Size.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806253771252001172, guid: 360ea4246cb49cb419ad928437fd8ba6, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806253771252001172, guid: 360ea4246cb49cb419ad928437fd8ba6, type: 3}
+      propertyPath: m_Size.z
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

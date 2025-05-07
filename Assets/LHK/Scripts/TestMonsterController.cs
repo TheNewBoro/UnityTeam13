@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class TestMonsterController : MonoBehaviour
 {
-    [SerializeField] private float meeleeMonsterHP = 1;
+    [SerializeField] private float meleeMonsterHP = 1;
+    private bool isDead = false;
 
     private void Update()
     {
+        if(!isDead)
+        {
         MonsterDie();
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +21,7 @@ public class TestMonsterController : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             Debug.Log("불릿 충돌로 몬스터 체력 감소");
-            meeleeMonsterHP--;
+            meleeMonsterHP--;
         }
 
 
@@ -25,11 +30,21 @@ public class TestMonsterController : MonoBehaviour
 
     private void MonsterDie()
     {
-        if (meeleeMonsterHP <= 0)
+        if (meleeMonsterHP <= 0)
         {
-            Debug.Log("몬스터 사망으로 삭제");
-            Destroy(gameObject);
-        }
+            isDead = true;
+            
+            GameManager.Instance.AddScore(1);
+            Debug.Log("몬스터를 처치하여 <color=#0000ffff>스코어 1점 추가</color>");
 
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player!=null)
+            {
+                player.GetComponent<PlayerController>().GainExperience(5);
+            }
+
+            Destroy(gameObject);
+            Debug.Log("몬스터 사망으로 삭제");
+        }
     }
 }

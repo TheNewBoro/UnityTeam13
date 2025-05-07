@@ -2,44 +2,55 @@ using UnityEngine;
 
 public class ItemsData : MonoBehaviour
 {   /* 당근을 먹으면 캐릭터가 커지고 실드가 생김
-     * 실드 체력은 1 실드는 최대 2개
-     * 
      */
-    public GameObject ShieldPrefab;  // 실드 프리팹
-    public Transform Player; //실드 생성 위치
+    public GameObject shieldPrefab; // 실드 프리팹
+    private GameObject currentShield; // 현재 실드 개수
+    private int shieldHealth = 0; // 실드 개수
 
-    int maxShield = 2; // 실드는 최대 2개
-    private int currentShield = 0; // 현재 실드 0개
-
-    private void OnTriggerExit(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // 플레이어가 먹을 오브젝트에 Player 태그 작성
+        if (other.CompareTag("Item"))
         {
-            GenerateShield();
-            Destroy(other.gameObject);
+            GetItem(other.gameObject);
+        }
+        else if (other.CompareTag("EnemyAttack"))
+        {
+            if (shieldHealth > 0)
+            {
+                DestroyShield();
+            }           
         }
     }
-    private void GenerateShield()
+    void GetItem(GameObject item)
     {
-        GameObject shield = Instantiate(ShieldPrefab, Player.position, Player.rotation);
-    }
-
-    public void AddShield()
-    {
-        if (currentShield < maxShield)
+        Destroy(item);
+        if (shieldHealth == 0)
         {
-            currentShield++; // TODO 실드 오브젝트 추가
-        }
-    }
-    public void TakeDamage()
-    {
-        if (currentShield > 0)
-        {
-            currentShield--;
+            CreateShield();
         }
         else
         {
-            Destroy(ShieldPrefab);
+            // 이미 실드가 있으면 추가 생성하지 않음
+        }
+    }
+
+    void CreateShield()
+    {
+        if (currentShield == null)
+        {
+            currentShield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+            currentShield.transform.SetParent(transform); // 플레이어와 함께 움직이게 함
+            shieldHealth = 1;
+        }
+       
+    }
+    void DestroyShield()
+    {
+        if (currentShield != null)
+        {
+            Destroy(currentShield);
+            currentShield = null;
+            shieldHealth = 0;
         }
     }
 }

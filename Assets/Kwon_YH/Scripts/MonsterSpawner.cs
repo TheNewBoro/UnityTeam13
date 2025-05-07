@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    [Header("스폰할 몬스터 프리팹")]
+    [Header("spawn Monster Prefabs")]
     [SerializeField] private GameObject monsterPrefab;
 
-    [Header("스폰 가능한 Tile 오브젝트들")]
+    [Header("spawn tile")]
     [SerializeField] private List<Transform> spawnTiles;
 
-    [Header("스폰 간격 (초)")]
+    [Header("spawn delay")]
     [SerializeField] private float spawnInterval = 3f;
 
-    [Header("한 타일 내 스폰 시도 최대 횟수")]
+    [Header("spawn attempt")]
     [SerializeField] private int maxAttemptsPerTile = 10;
 
-    [Header("플레이어 오브젝트")]
+    [Header("player object")]
     [SerializeField] private Transform player;
 
-    [Header("스폰 거리 범위 (도넛 영역)")]
+    [Header("spawn length")]
     [SerializeField] private float minSpawnDistance = 5f;
     [SerializeField] private float maxSpawnDistance = 10f;
 

@@ -6,7 +6,10 @@ public class ItemTest : MonoBehaviour
 {
     public void OnTriggerEnter(Collider other)
     {
-        PlayerHpTest player = other.GetComponent<PlayerHpTest>();
+        Debug.Log(other.gameObject.name);
+
+
+        PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {
             player.Grow();

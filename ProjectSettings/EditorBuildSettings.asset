@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Cuve World/GameOver Scene.unity
-    guid: 72e1ee8faf5402f4f96465109b372132
+    path: Assets/Scenes/Cuve World/Title Scene.unity
+    guid: 2b454ca7e6d280445beb5910a74f7af1
   - enabled: 1
     path: Assets/Scenes/Cuve World/Loding Scene.unity
     guid: 2314566bb4272374c86ec364defedd65
@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Cuve World/MainGame.unity
     guid: feccf561504fcdf4090a824b31a2afda
   - enabled: 1
-    path: Assets/Scenes/Cuve World/Title Scene.unity
-    guid: 2b454ca7e6d280445beb5910a74f7af1
+    path: Assets/Scenes/Cuve World/GameOver Scene.unity
+    guid: 72e1ee8faf5402f4f96465109b372132
   m_configObjects: {}

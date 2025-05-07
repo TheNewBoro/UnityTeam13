@@ -6,9 +6,7 @@ public class ItemTest : MonoBehaviour
 {
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
-
-
+        
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {

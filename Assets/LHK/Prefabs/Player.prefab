@@ -577,7 +577,6 @@ GameObject:
   - component: {fileID: 2314374273635088388}
   - component: {fileID: 5776126388408596964}
   - component: {fileID: 319636050486450586}
-  - component: {fileID: 5294601739036303720}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -679,6 +678,7 @@ MonoBehaviour:
   runSpeed: 15
   walkSpeed: 7.5
   moveSpeed: 10
+  rotateSpeed: 0.1
   rigid: {fileID: 2312368165720206082}
 --- !u!114 &5776126388408596964
 MonoBehaviour:
@@ -693,10 +693,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 3331912591931323975}
-  playerHP: 1
   playerLevel: 1
   experience: 0
   experienceToLevelUp: 6
+  playerHP: 1
+  currentHP: 0
+  playerSize: 1
+  sizeIncrement: 1
+  sizeDecrement: 1
+  maxPlayerHP: 2
+  maxPlayerSize: 2
 --- !u!65 &319636050486450586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -718,17 +724,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5294601739036303720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9085972534828863118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a71cbb45204ba404b9a2d77baf01feaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShieldPrefab: {fileID: 1127292094840876, guid: 10e2657150182be40b41a58dc649e67a, type: 3}
-  Player: {fileID: 7410096438638764401}

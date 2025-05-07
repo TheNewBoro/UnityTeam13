@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             return;
             
         }
-        if (other.CompareTag("Monster"))
+        if (other.CompareTag("Monster") || (other.CompareTag("Wall"))) 
         {
             Destroy(gameObject);
         }

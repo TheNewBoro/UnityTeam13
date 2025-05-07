@@ -112,8 +112,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8874957619953531883, guid: e8098bdf0ea2a544eaf85d7542ee6cd4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8864331954899520669}
   m_SourcePrefab: {fileID: 100100000, guid: e8098bdf0ea2a544eaf85d7542ee6cd4, type: 3}
+--- !u!1 &4380337555164894207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8874957619953531883, guid: e8098bdf0ea2a544eaf85d7542ee6cd4, type: 3}
+  m_PrefabInstance: {fileID: 5179204594832631828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8864331954899520669
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380337555164894207}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4385535806940598483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8880173466060503239, guid: e8098bdf0ea2a544eaf85d7542ee6cd4, type: 3}
@@ -174,8 +203,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7050124487338566627, guid: a4c921fb36da08949b1ed01f21f60883, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8542177476166577348}
   m_SourcePrefab: {fileID: 100100000, guid: a4c921fb36da08949b1ed01f21f60883, type: 3}
+--- !u!1 &27066468262616216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7050124487338566627, guid: a4c921fb36da08949b1ed01f21f60883, type: 3}
+  m_PrefabInstance: {fileID: 7041160387106389883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8542177476166577348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27066468262616216}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &33408213789794228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7044063604265607375, guid: a4c921fb36da08949b1ed01f21f60883, type: 3}
@@ -236,10 +294,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5201315998881232737, guid: e1fe30780767f5e48ade1b942df3392c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3356142622198293625}
   m_SourcePrefab: {fileID: 100100000, guid: e1fe30780767f5e48ade1b942df3392c, type: 3}
 --- !u!4 &4100925235544215733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5203998494498780237, guid: e1fe30780767f5e48ade1b942df3392c, type: 3}
   m_PrefabInstance: {fileID: 8129341238979077368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4107267050296513433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5201315998881232737, guid: e1fe30780767f5e48ade1b942df3392c, type: 3}
+  m_PrefabInstance: {fileID: 8129341238979077368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3356142622198293625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107267050296513433}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}

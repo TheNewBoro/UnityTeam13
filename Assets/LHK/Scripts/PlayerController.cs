@@ -92,6 +92,8 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log($"<b>!!!!레벨 {playerLevel} 달성!!!!</b>, 현재 경험치: {experience}, 다음 레벨까지: {experienceToLevelUp}");
 
+        GameManager.Instance.AddPlayerLevel(1);
+
     }
 
 

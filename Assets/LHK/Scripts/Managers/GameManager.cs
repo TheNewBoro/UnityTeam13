@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return instance; } }
 
     public int score;
+    public int playerLevel;
     
    
     
@@ -49,5 +50,10 @@ public class GameManager : MonoBehaviour
         Debug.Log($"{amount} 점수 획득");
     }
 
+    public void AddPlayerLevel(int amount)
+    {
+        playerLevel += amount;
+        Debug.Log($"플레이어 레벨 {amount} 증가");
+    }
 
 }

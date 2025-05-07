@@ -61,12 +61,7 @@ public class PlayerController : MonoBehaviour
     //적 또는 적의 발사체와 충돌하면 hp-1
     private void OnTriggerEnter(Collider other)
     {
-        // 자신이 쏜 불릿에 맞아 체력이 감소하는 현상 제거를 위해 주석처리
-        //if (other.CompareTag("Bullet"))
-        //{
-        //    playerHP--;
-        //    Debug.Log("<color=#ff0000ff>몬스터와 충돌하여 플레이어 체력 -1</color>");
-        //}
+        
 
         if (other.CompareTag("Monster"))
         {

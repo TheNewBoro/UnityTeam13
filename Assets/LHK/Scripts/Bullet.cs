@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             return;
             
         }
-        if (other.gameObject.layer == 6 || other.gameObject.layer == 3)
+        if (other.gameObject.layer == 6)
         {
             Destroy(gameObject);
         }

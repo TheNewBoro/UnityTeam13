@@ -9,7 +9,6 @@ public class playerHealth : MonoBehaviour
 
     private void Start()
     {
-
         currentHealth = maxHealth;
     }
 

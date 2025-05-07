@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip titleBGM;
     public AudioClip gameBGM;
     public AudioClip LodingBGM;
+    public AudioClip GameOverBGM;
     public AudioClip otherBGM; // 예시
 
     private void Awake()
@@ -43,7 +44,7 @@ public class SoundManager : MonoBehaviour
 
         switch (sceneName) // 씬마다 BGM 따로 설정
         {
-            case "Title":
+            case "Title Scene":
                 newClip = titleBGM;
                 break;
             case "Loding Scene":
@@ -51,6 +52,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "pause Scene":
                 newClip = gameBGM;
+                break;
+            case "GameOver Scene":
+                newClip = GameOverBGM;
                 break;
             default:
                 newClip = otherBGM;

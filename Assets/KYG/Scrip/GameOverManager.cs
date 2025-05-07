@@ -6,7 +6,7 @@ public class GameOverManager : MonoBehaviour
     // 타이틀 씬으로 이동
     public void GoToTitle()
     {
-        SceneManager.LoadScene("Title"); // "Title"은 타이틀 씬 이름
+        SceneManager.LoadScene("Title Scene"); // "Title"은 타이틀 씬 이름
     }
 
     // 게임 종료

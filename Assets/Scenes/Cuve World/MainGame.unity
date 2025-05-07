@@ -304,8 +304,11 @@ MonoBehaviour:
   - {fileID: 8139710491039490552}
   - {fileID: 8139710491039490551}
   - {fileID: 8139710491039490550}
-  spawnInterval: 3
+  spawnInterval: 1
   maxAttemptsPerTile: 5
+  player: {fileID: 1787532197}
+  minSpawnDistance: 10
+  maxSpawnDistance: 20
 --- !u!4 &1423838861
 Transform:
   m_ObjectHideFlags: 0

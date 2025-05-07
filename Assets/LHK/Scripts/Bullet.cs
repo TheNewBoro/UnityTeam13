@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             return;
             
         }
-        if (other.gameObject.layer == 6)
+        if (other.CompareTag("Monster"))
         {
             Destroy(gameObject);
         }

@@ -1450,6 +1450,7 @@ MonoBehaviour:
   titleBGM: {fileID: 0}
   gameBGM: {fileID: 0}
   LodingBGM: {fileID: 0}
+  GameOverBGM: {fileID: 0}
   otherBGM: {fileID: 0}
 --- !u!4 &1842589317
 Transform:
@@ -1751,7 +1752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2008547519
 RectTransform:
   m_ObjectHideFlags: 0

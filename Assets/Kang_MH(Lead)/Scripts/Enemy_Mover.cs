@@ -1,36 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy_Mover : MonoBehaviour
 {
-
-    public float moveSpeed = 2f;
-    public float stopDistance = 2f;
-    // Start is called before the first frame update
+    public int attackDamage = 1;
+    public float attackCooldown = 1f;
 
     private Transform player;
-    private Rigidbody target;
-    public void Start()
+    private NavMeshAgent agent;
+    private float lastAttackTime;
+
+    void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        target = GetComponent<Rigidbody>();
+        player = GameObject.FindWithTag("player")?.transform;
+        agent = GetComponent<NavMeshAgent>();
     }
-    // Update is called once per frame
+
     void Update()
     {
-        Moving();
+        if (player == null) return;
+        agent.SetDestination(player.position);
     }
 
-    public void Moving()
+    void OnTriggerEnter(Collider other)
     {
-        float distance = Vector3.Distance(transform.position, player.position);
-
-        if (distance > stopDistance)
+        if (other.CompareTag("player") && Time.time - lastAttackTime >= attackCooldown)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
-            target.MovePosition(transform.position + direction * moveSpeed * Time.deltaTime);
+            playerHealth playerHealth = other.GetComponent<playerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(attackDamage);
+                lastAttackTime = Time.time;
+            }
         }
     }
 }
-

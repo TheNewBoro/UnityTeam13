@@ -1,31 +1,50 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+
 
 public class MusicVolumeController : MonoBehaviour
 {
-    public Slider musicSlider;
-    public AudioMixer audioMixer; // MainAudioMixer
-    private const string exposedParam = "BGMVolume";
+    [SerializeField] private AudioMixer audioMixer; // MainAudioMixer
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider SFXSlider;
+
+
 
     void Start()
     {
-        GetComponent<AudioSource>().Play();
-        musicSlider.onValueChanged.AddListener(SetVolume);
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            LoadVolume();
+        }
 
-        // 저장된 값 불러오기 (옵션)
-        //float savedVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        //musicSlider.value = savedVolume;
-       //SetVolume(savedVolume);
+        else
+        {
+            SetVolume();
+            SetSFXVolume();
+        }
+
     }
 
-    public void SetVolume(float value)
+    public void SetVolume()
     {
-        // dB 단위로 변환: -80 = 무음, 0 = 최대
-        float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20;
-        audioMixer.SetFloat(exposedParam, dB);
+        float volume = musicSlider.value;
+        audioMixer.SetFloat("Music", Mathf.Log10(volume) * 20); // 볼륨 조절 기능 0~1만 움직이기 때문에 Log10(volume) * 20 조정
+        PlayerPrefs.SetFloat("musicVolume", volume);
+    }
 
-        // 저장 (옵션)
-        //PlayerPrefs.SetFloat("MusicVolume", value);
+    public void SetSFXVolume()
+    {
+        float volume = SFXSlider.value;
+        audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20); // 볼륨 조절 기능 0~1만 움직이기 때문에 Log10(volume) * 20 조정
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+    }
+
+    private void LoadVolume()
+    {
+        musicSlider.value = PlayerPrefs.GetFloat("musicVolume"); // PlayerPrefs를 이용하여 음악 볼륨 저장 기능
+        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        SetVolume();
+        SetSFXVolume();
     }
 }

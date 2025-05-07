@@ -21,12 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/ProtoType.unity
     guid: 2b6fcebd47e2b054f93f7837fb235d19
   - enabled: 1
-    path: Assets/KYG/Title.unity
+    path: Assets/KYG/Scenes/Title.unity
     guid: 826e34839e8b88347a38dfc0c89d7dde
   - enabled: 1
-    path: Assets/KYG/Loding Scene.unity
+    path: Assets/KYG/Scenes/Loding Scene.unity
     guid: e12cedc1c4c70f74ab073c0ceba0e0a4
   - enabled: 1
-    path: Assets/KYG/pause Scene.unity
+    path: Assets/KYG/Scenes/pause Scene.unity
     guid: c08145668c9f9f34ea1ea59a47a94450
   m_configObjects: {}

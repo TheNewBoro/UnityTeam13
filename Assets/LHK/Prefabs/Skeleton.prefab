@@ -1167,6 +1167,9 @@ GameObject:
   - component: {fileID: 6892666359263083208}
   - component: {fileID: 1270210968013800819}
   - component: {fileID: 2332193183364025569}
+  - component: {fileID: 6322100952950585561}
+  - component: {fileID: 4212413072763142855}
+  - component: {fileID: 8811542116270921784}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Monster
@@ -1226,6 +1229,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeMonsterHP: 1
+  dropRate: 0.5
+  itemPrefab: {fileID: 3379992438457931361, guid: 240f3838bd2d3404a8018e204fa0ac3b, type: 3}
+--- !u!195 &6322100952950585561
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504348977442624112}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4212413072763142855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504348977442624112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b684bf90b246c4f9f44bfdf7ec2c03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 1
+  attackCooldown: 1
+--- !u!114 &8811542116270921784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504348977442624112}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10a414d6f236fb4c89397ba69b0eb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropRate: 0.5
+  itemPrefab: {fileID: 3379992438457931361, guid: 240f3838bd2d3404a8018e204fa0ac3b, type: 3}
+  MonsterHP: 1
 --- !u!1 &6910515427020390697
 GameObject:
   m_ObjectHideFlags: 0

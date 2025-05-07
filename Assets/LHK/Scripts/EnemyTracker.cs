@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy_Mover : MonoBehaviour
+public class EnemyTracker : MonoBehaviour
 {
     public int attackDamage = 1;
     public float attackCooldown = 1f;
@@ -24,16 +24,16 @@ public class Enemy_Mover : MonoBehaviour
         agent.SetDestination(player.position);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && Time.time - lastAttackTime >= attackCooldown)
-        {
-            playerHealth playerHealth = other.GetComponent<playerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(attackDamage);
-                lastAttackTime = Time.time;
-            }
-        }
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player") && Time.time - lastAttackTime >= attackCooldown)
+    //    {
+    //        PlayerController playerHealth = other.GetComponent<PlayerController>();
+    //        if (playerHealth != null)
+    //        {
+    //            playerHealth.TakeDamage(attackDamage);
+    //            lastAttackTime = Time.time;
+    //        }
+    //    }
+    //}
 }

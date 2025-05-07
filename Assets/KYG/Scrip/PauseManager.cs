@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -27,34 +28,27 @@ public class PauseManager : MonoBehaviour
     public void OpenPauseMenu()
     {
         isPaused = true;
-        Time.timeScale = 0f; // 게임 정지
+        Time.timeScale = 0f;
         menuSet.SetActive(true);
-        optionPanel.SetActive(false); // 옵션창은 기본적으로 닫힘
+        optionPanel.SetActive(false);
     }
 
     public void ClosePauseMenu()
     {
         isPaused = false;
-        Time.timeScale = 1f; // 게임 재개
+        Time.timeScale = 1f;
         menuSet.SetActive(false);
         optionPanel.SetActive(false);
-    }
-
-    public void OpenOption()
-    {
-        Debug.Log("OpenOption() called");
-        optionPanel.SetActive(true);
-        menuSet.SetActive(false);
-    }
-
-    public void CloseOption()
-    {
-        optionPanel.SetActive(false);
-        menuSet.SetActive(true);
     }
 
     public void GameExit()
     {
         Application.Quit();
+    }
+
+    public void GoToTitle()
+    {
+        Time.timeScale = 1f; // 정지된 시간 다시 재개
+        SceneManager.LoadScene("Title Scene"); // 씬 이름에 맞게 변경
     }
 }

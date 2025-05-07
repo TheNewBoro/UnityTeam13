@@ -98,6 +98,8 @@ public class PlayerController : MonoBehaviour
         experience += amount;
         Debug.Log($"경험치 획득: +{amount} 현재 경험치: {experience}/{experienceToLevelUp}");
 
+        PlayerUI.Instance?.UpdateExperience(experience, experienceToLevelUp);
+
         while (experience >= experienceToLevelUp)
         {
             LevelUp();
@@ -113,8 +115,10 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log($"<b>!!!!레벨 {playerLevel} 달성!!!!</b>, 현재 경험치: {experience}, 다음 레벨까지: {experienceToLevelUp}");
 
-        GameManager.Instance.AddPlayerLevel(1);
+        PlayerUI.Instance?.UpdateLevel(playerLevel);
+        PlayerUI.Instance?.UpdateExperience(experience, experienceToLevelUp);
 
+        GameManager.Instance.AddPlayerLevel(1);
     }
 
 

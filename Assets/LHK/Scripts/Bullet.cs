@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -20,6 +21,11 @@ public class Bullet : MonoBehaviour
             if (other.CompareTag("Monster"))
                 Debug.Log("몬스터와 총알이 충돌했지만 관통해서 날아감");
 
+            else if (isPenetrating && other.CompareTag("Wall"))
+            {
+                Destroy(gameObject);
+            }
+
             return;
             
         }
@@ -27,5 +33,6 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 }

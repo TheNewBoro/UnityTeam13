@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("<color=#ff0000ff>플레이어 사망</color>");
             //TODO 게임오버
+            SceneManager.LoadScene("GameOver Scene");
         }
 
         if (playerLevel >= 2)

@@ -9,7 +9,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] ObjectPool bulletPool;
     [SerializeField] float attackSpeed;
 
-
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip shootSound;
 
 
 
@@ -38,15 +39,12 @@ public class Shooter : MonoBehaviour
             bullet.isPenetrating = canPenetrate;
 
 
-
-            //if(PlayerController.Instance.playerLevel >= 2) //플레이어 레벨이 2 이상일때
-            //{
-            //    bullet.isPiercing = true;
-            //}
-            //else 
-            //{
-            //    bullet.isPiercing = false;
-            //}
+            //발사 사운드 설정
+            if (audioSource != null && shootSound != null)
+            
+                audioSource.PlayOneShot(shootSound);
+            
+            
 
 
         }

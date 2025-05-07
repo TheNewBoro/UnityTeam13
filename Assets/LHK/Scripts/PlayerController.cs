@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+        GameManager.Instance.RegisterPlayer(this.gameObject);
         UpdateSize();
     }
 

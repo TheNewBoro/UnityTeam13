@@ -11,8 +11,12 @@ public class GameManager : MonoBehaviour
 
     public int score;
     public int playerLevel;
-    
-   
+
+    public GameObject Player { get; private set; }
+    public void RegisterPlayer(GameObject playerObj)
+    {
+        Player = playerObj;
+    }
     
 
     private void Awake()

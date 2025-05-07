@@ -75,7 +75,17 @@ public class PlayerController : MonoBehaviour
                 lastHitTime = Time.time;
                 Debug.Log("<color=#ff0000ff>몬스터와 충돌하여 플레이어 체력 -1</color>");
 
+                // 크기 줄이기도 이 안에서 실행
+                playerSize -= sizeDecrement;
+                if (playerSize < 1f)
+                {
+                    playerSize = 1f;
+                }
+                UpdateSize();
             }
+
+            // 성장 가능 여부는 항상 체크
+            canGrow = (playerSize < maxPlayerSize);
         }
     }
 
@@ -116,7 +126,7 @@ public class PlayerController : MonoBehaviour
                 playerSize = maxPlayerSize; // 최대 크기 제한
             }
 
-            Debug.Log("@@플레이어 실드 @@ +1 @@ 부여@@");
+            Debug.Log("@@플레이어가 커지고 실드 @@ +1 @@ 부여@@");
             currentHP += 1;
             UpdateSize();
 
@@ -135,33 +145,34 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void TakeDamage(int amount)
-    {
-        currentHP -= 1;
-        if (currentHP <= 0)
-        {
-            // 사망 처리 (예: 게임 오버)
-            Debug.Log("게임 오버");
-        }
-        else
-        {
-            // 크기 줄이기
-            playerSize -= sizeDecrement;
-            if (playerSize < 1f)
-            {
-                playerSize = 1f; // 최소 크기
-            }
-            UpdateSize();
-
-            // 크기가 원래 크기보다 작아졌는지 체크, 다시 아이템 먹어 크기 커질 수 있음
-        }
-        if (playerSize < maxPlayerSize)
-        {
-            canGrow = true;
-        }
-        else
-        {
-            canGrow = false;
-        }
-    }
+    //public void TakeDamage(int amount)
+    //{
+    //    currentHP -= 1;
+    //    if (currentHP <= 0)
+    //    {
+    //        // 사망 처리 (예: 게임 오버)
+    //        Debug.Log("게임 오버");
+    //    }
+    //    else
+    //    {
+    //        
+    //        // 크기 줄이기
+    //        playerSize -= sizeDecrement;
+    //        if (playerSize < 1f)
+    //        {
+    //            playerSize = 1f; // 최소 크기
+    //        }
+    //        UpdateSize();
+    //
+    //        // 크기가 원래 크기보다 작아졌는지 체크, 다시 아이템 먹어 크기 커질 수 있음
+    //    }
+    //    if (playerSize < maxPlayerSize)
+    //    {
+    //        canGrow = true;
+    //    }
+    //    else
+    //    {
+    //        canGrow = false;
+    //    }
+    //}
 }

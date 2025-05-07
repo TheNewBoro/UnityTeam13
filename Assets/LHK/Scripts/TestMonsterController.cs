@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestMonsterController : MonoBehaviour
 {
-    [SerializeField] private float meeleeMonsterHP = 1;
+    [SerializeField] private float meleeMonsterHP = 1;
     private bool isDead = false;
 
     private void Update()
@@ -21,7 +21,7 @@ public class TestMonsterController : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             Debug.Log("불릿 충돌로 몬스터 체력 감소");
-            meeleeMonsterHP--;
+            meleeMonsterHP--;
         }
 
 
@@ -30,7 +30,7 @@ public class TestMonsterController : MonoBehaviour
 
     private void MonsterDie()
     {
-        if (meeleeMonsterHP <= 0)
+        if (meleeMonsterHP <= 0)
         {
             isDead = true;
             

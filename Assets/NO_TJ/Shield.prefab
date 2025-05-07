@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 5658032744489443554}
   - component: {fileID: -5112638678294877995}
   - component: {fileID: 6754370215670488780}
-  - component: {fileID: -669103305351493225}
+  - component: {fileID: -164645412238328794}
   m_Layer: 3
   m_Name: Shield
   m_TagString: Player
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
---- !u!54 &-669103305351493225
+--- !u!54 &-164645412238328794
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,5 +628,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0

@@ -1136,7 +1136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2314374273635088388, guid: 8812ba22dfd6c2442aa3479d40d058f5, type: 3}
       propertyPath: rotateSpeed
-      value: 0.2
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331912591931323975, guid: 8812ba22dfd6c2442aa3479d40d058f5, type: 3}
+      propertyPath: bulletSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5776126388408596964, guid: 8812ba22dfd6c2442aa3479d40d058f5, type: 3}
       propertyPath: currentHP

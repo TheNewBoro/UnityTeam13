@@ -30,10 +30,12 @@ public class ItemDrop : MonoBehaviour
 
     void DropItem()
     {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y += 1f;
         float rand = Random.Range(0f, 1f);
         if (rand <= dropRate)
         {
-            Instantiate(itemPrefab, transform.position, Quaternion.identity);
+            Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
         }
     }
 }

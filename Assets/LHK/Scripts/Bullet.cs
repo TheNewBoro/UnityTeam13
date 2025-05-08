@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Bullet : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Bullet : MonoBehaviour
     public bool isPenetrating = false;
 
     [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioMixerGroup mixerGroup;
     private AudioSource audioSource;
 
     private void Awake()

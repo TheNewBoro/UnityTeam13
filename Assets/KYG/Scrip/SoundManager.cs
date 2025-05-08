@@ -50,7 +50,7 @@ public class SoundManager : MonoBehaviour
             case "Loding Scene":
                 newClip = LodingBGM;
                 break;
-            case "pause Scene":
+            case "MainGame":
                 newClip = gameBGM;
                 break;
             case "GameOver Scene":

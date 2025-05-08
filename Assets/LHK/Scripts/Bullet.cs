@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityEngine.Audio; // AudioMixerGroupï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½
 
 public class Bullet : MonoBehaviour
 {
@@ -11,64 +9,59 @@ public class Bullet : MonoBehaviour
     public bool isPenetrating = false;
 
     [SerializeField] private AudioClip hitSound;
-    [SerializeField] private AudioMixerGroup mixerGroup;
+    [SerializeField] private AudioMixerGroup sfxMixerGroup; // SFX ï¿½Í¼ï¿½ ï¿½×·ï¿½ ï¿½Ò´ï¿½
+
     private AudioSource audioSource;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     private void OnEnable()
     {
         isPenetrating = false;
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
-        // °üÅëÅºÀÎ °æ¿ì
         if (isPenetrating)
         {
             if (other.CompareTag("Monster"))
             {
-                // ¸ó½ºÅÍ¿Í Ãæµ¹
                 PlayHitSound();
-                Debug.Log("°üÅëÅºÀÌ ¸ó½ºÅÍ¿Í Ãæµ¹");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½æµ¹");
             }
             else if (other.CompareTag("Wall"))
             {
-                Debug.Log("°üÅëÅºÀÌ º®°ú Ãæµ¹");
-                // º®°ú Ãæµ¹
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹");
                 PlayHitSound();
-                Destroy(gameObject);  // º®¿¡ ´êÀ¸¸é ÃÑ¾Ë ÆÄ±«
+                Destroy(gameObject);
             }
 
-            return;  // °üÅëÅºÀÎ °æ¿ì ¿©±â¼­ Ã³¸® ³¡³»°í ºüÁ®³ª¿È
+            return;
         }
 
-        // °üÅëÀÌ ¾Æ´Ñ °æ¿ì
         if (other.CompareTag("Monster") || other.CompareTag("Wall"))
         {
-            Debug.Log("ÀÏ¹ÝÅºÀÌ ¸ó½ºÅÍ ¶Ç´Â º®°ú Ãæµ¹");
-            // ¸ó½ºÅÍ ¶Ç´Â º®°ú Ãæµ¹
+            Debug.Log("ï¿½Ï¹ï¿½Åºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹");
             PlayHitSound();
-            Destroy(gameObject);  // Ãæµ¹ ÈÄ ÃÑ¾Ë ÆÄ±«
+            Destroy(gameObject);
         }
     }
 
-    // ÇÇ°Ý »ç¿îµå¸¦ Àç»ýÇÏ´Â ÇÔ¼ö
     private void PlayHitSound()
     {
         if (hitSound != null && GameManager.Instance.Player != null)
         {
-            // ÇÃ·¹ÀÌ¾î À§Ä¡ ±âÁØÀ¸·Î »ç¿îµå °´Ã¼ »ý¼º
             GameObject soundObj = new GameObject("HitSound");
             soundObj.transform.position = GameManager.Instance.Player.transform.position;
 
             AudioSource source = soundObj.AddComponent<AudioSource>();
+            source.outputAudioMixerGroup = sfxMixerGroup; // ï¿½ï¿½ ï¿½ï¿½ï¿½â¼­ ï¿½Í¼ï¿½ ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½
             source.clip = hitSound;
             source.volume = 1.0f;
-            source.spatialBlend = 0f; // 2D »ç¿îµå·Î Ã³¸®
+            source.spatialBlend = 0f; // 2D ï¿½ï¿½ï¿½ï¿½
             source.Play();
 
             Destroy(soundObj, hitSound.length);

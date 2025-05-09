@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class MiniMapFollow : MonoBehaviour
 {
     public Transform player;
